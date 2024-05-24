@@ -1,0 +1,22 @@
+USE school;
+
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    firstName VARCHAR(50),
+    lastName VARCHAR(50),
+    age INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE courses (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    courseName VARCHAR(100),
+    instructor VARCHAR(100),
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+INSERT INTO students (firstName, lastName, age) VALUES ('John', 'Doe', 20), ('Jane', 'Smith', 22);
+INSERT INTO courses (courseName, instructor, description) VALUES ('Mathematics', 'Nancy', 'Basic Mathematics course'), ('Physics', 'Green', 'Introduction to Physics');
